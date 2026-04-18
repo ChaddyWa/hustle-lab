@@ -425,7 +425,7 @@ JSON format:
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          model: "claude-sonnet-4-20250514",
+          model: "claude-sonnet-4-5",
           max_tokens: 1500,
           messages: [{ role: "user", content: `${SYSTEM_PROMPT}\n\nScore this listing. RESPOND ONLY WITH A SINGLE VALID JSON OBJECT. NO MARKDOWN. NO BACKTICKS.\n\n${listing}` }],
         }),
