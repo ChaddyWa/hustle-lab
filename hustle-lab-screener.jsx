@@ -576,7 +576,8 @@ export default function App() {
       });
       const data  = await res.json();
       const text  = data.content?.map(b => b.text || "").join("") || "";
-      const clean = text.replace(/```json|```/g, "").trim();
+      const jsonMatch = text.match(/\{[\s\S]*\}/);
+      const clean = jsonMatch ? jsonMatch[0] : text.trim();
       const parsed = JSON.parse(clean);
       setReport(parsed);
     } catch { setError("Couldn't parse the listing. Paste more detail and try again."); }
