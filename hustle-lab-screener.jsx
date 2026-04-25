@@ -575,6 +575,7 @@ export default function App() {
         }),
       });
       const data  = await res.json();
+      console.log("DATA:", JSON.stringify(data).slice(0, 500));
       const text  = data.content?.map(b => b.text || "").join("") || "";
       const jsonMatch = text.match(/\{[\s\S]*\}/);
       const clean = jsonMatch ? jsonMatch[0] : text.trim();
