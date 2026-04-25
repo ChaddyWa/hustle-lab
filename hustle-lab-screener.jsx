@@ -565,7 +565,7 @@ export default function App() {
     if (!listing.trim()) return;
     setLoading(true); setError(""); setReport(null);
     try {
-      const res  = await fetch("/api/screen", {
+      const res  = await fetch("https://api.anthropic.com/v1/messages", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
