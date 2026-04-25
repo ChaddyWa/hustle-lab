@@ -5,5 +5,14 @@ export default defineConfig({
   plugins: [react()],
   build: {
     outDir: 'dist'
+  },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'https://api.anthropic.com',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '/v1')
+      }
+    }
   }
 })
