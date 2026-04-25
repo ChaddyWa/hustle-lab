@@ -578,6 +578,7 @@ export default function App() {
       const text  = data.content?.map(b => b.text || "").join("") || "";
       const jsonMatch = text.match(/\{[\s\S]*\}/);
       const clean = jsonMatch ? jsonMatch[0] : text.trim();
+      console.log("CLEAN:", clean.slice(0, 500));
       const parsed = JSON.parse(clean);
       setReport(parsed);
     } catch { setError("Couldn't parse the listing. Paste more detail and try again."); }
