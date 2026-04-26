@@ -848,12 +848,6 @@ export default function App() {
                     <p style={{ margin: 0, fontSize: 14, color: T.accent, fontWeight: 800, lineHeight: 1.55 }}>{report.smartBuyerMove}</p>
                   </div>
 
-                  {/* Reel Hook */}
-                  <div style={{ background: T.surface, border: `1px solid ${T.borderBright}`, borderRadius: 8, padding: "14px 16px", marginBottom: 14 }}>
-                    <div style={{ fontSize: 10, color: T.textMuted, letterSpacing: "0.09em", textTransform: "uppercase", fontWeight: 700, marginBottom: 8 }}>📱 Reel Hook</div>
-                    <p style={{ margin: 0, fontSize: 15, color: T.text, fontWeight: 800, lineHeight: 1.4 }}>"{report.reelHook}"</p>
-                  </div>
-
                   {/* Copy */}
                   <button onClick={copyReport} style={{
                     width: "100%", padding: "12px", background: "transparent", border: `1px solid ${copied ? T.green : T.accent}`,
